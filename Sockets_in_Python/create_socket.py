@@ -38,3 +38,14 @@ reply = sock.recv(10000)
 sock.shutdown(socket.SHUT_RDWR)
 sock.close()
 print(repr(reply))
+
+"""
+b'HTTP/1.1 200 OK\r\nDate: Sat, 05 Apr 2025 12:05:04 GMT\r\nExpires: -1
+\r\nCache-Control: private, max-age=0\r\nContent-Type: text/html; charset=ISO-8859-1
+\r\nContent-Security-Policy-Report-Only: object-src \'none\';base-uri \'self\';script-src \'nonce-0Q_0QGaG8ROk2njTLVY9zA\' \'strict-dynamic\' \'report-sample\' \'unsafe-eval\' \'unsafe-inline\' 
+https: http:;report-uri https://csp.withgoogle.com/csp/gws/other-hp\r\nServer: gws\r\nX-XSS-Protection: 0\r\nX-Frame-Options: SAMEORIGIN
+\r\nSet-Cookie: AEC=AVcja2cMaSIsRL8obFtoxyYIupkKMBLKKDx0OA_QbtaiLpmw-lTVBIiXqw; expires=Thu, 02-Oct-2025 12:05:04 GMT; path=/; domain=.google.com; Secure; HttpOnly; 
+SameSite=lax\r\nAccept-Ranges: none\r\nVary: 
+Accept-Encoding\r\nConnection: close\r\nTransfer-Encoding: chunked\r\n\r\n4f40\r\n<!doctype html><html itemscope="" itemtype="http://schema.org/WebPage" lang="nl"><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><meta content="/images/branding/googleg/1x/googleg_standard_color_128dp.png" itemprop="image"><title>Google</title><script nonce="0Q_0QGaG8ROk2njTLVY9zA">(function(){var _g={kEI:\'cBzxZ8SzMozt7_UPtZq3oAU\',
+kEXPI:\'0,202792,25,4037228,78813,16105,344796,94243,195801,5241682,57,14,36,36812535,25228681,42877,95391,8182,10491,4381,56223,6757,23879,9140,4598,328,6226,34311,16264,3615,24,9242,709,1341,5329,6463,1915,50,15585,58708,21345,8341,41,13162,477,1,4922,617,1202,4105,7737,3347,7739,2285,4945,2147,2833,1784,5774,4'
+"""
