@@ -23,6 +23,11 @@ print(json.dumps(list_example))
 # [45, "Coggy"]
 
 tuple_example = ('Arial', 'bold')
-print(json.dumps(tuple_example))
+print(json.dumps(tuple_example, indent=2))
 
-# ["Arial", "bold"]
+"""
+[
+  "Arial",
+  "bold"
+]
+"""
