@@ -11,10 +11,13 @@ Deserialization -> converts serialized data back into Python objects for reading
 TypeError when converting objects to JSON in Python usually happens in case of serializing an unsupported data type.
 The json module can handle dictionaries, lists, strings, numbers, booleans, and None, 
 but complex objects like custom classes require special handling.
+
+json.JSONEncoder class -> part of the json module, which provides methods to serialize Python objects into JSON-encoded strings. 
 """
 import json
 
 
+# Example for serialization
 class Vehicle:
     def __init__(self, name, width, height, weight):
         self.name = name
@@ -31,3 +34,44 @@ def encode_vehicle_to_dict(obj):
 
 bus = Vehicle('Red Tourist Bus', 4, 5, 20)
 print(json.dumps(bus, default=encode_vehicle_to_dict))
+
+# Result: {"name": "Red Tourist Bus", "width": 4, "height": 5, "weight": 20}
+
+
+# Example for json.JSONEncoder class
+class VehicleEncoder(json.JSONEncoder):
+    def default(self, obj):
+        if isinstance(obj, Vehicle):
+            return {"name": obj.name,
+                    "width": obj.width,
+                    "height": obj.height,
+                    "weight": obj.weight}
+        # Call the base class method for other types
+        return super().default(obj)
+
+
+# Example Usage
+data = [
+    Vehicle("Bus", 4, 5, 20),
+    Vehicle("Plane", 10, 5, 30)
+]
+
+json_data = json.dumps(data, cls=VehicleEncoder, indent=2)
+print(json_data)
+
+"""
+[
+  {
+    "name": "Bus",
+    "width": 4,
+    "height": 5,
+    "weight": 20
+  },
+  {
+    "name": "Plane",
+    "width": 10,
+    "height": 5,
+    "weight": 30
+  }
+]
+"""
