@@ -1,5 +1,13 @@
 """
 Deserialization -> converts serialized data back into Python objects for reading saved data or receiving it over a network: json.loads(data)
+
+In Python, the object_hook parameter in json.loads() allows to customize the deserialization of JSON objects into Python objects. 
+It can be used it convert JSON dictionaries into instances of a custom class.
+
+From https://docs.python.org/3/library/json.html#basic-usage
+object_hook (callable | None) – If set, a function that is called with the result of any object literal decoded (a dict). 
+The return value of this function will be used instead of the dict. 
+This feature can be used to implement custom decoders, for example JSON-RPC class hinting. Default None.
 """
 import json
 
