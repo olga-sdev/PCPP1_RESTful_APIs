@@ -1,5 +1,7 @@
 """
 XML -> eXtensible Markup Language https://www.w3schools.com/xml/default.asp
+
+for updating data in xml apply 'SubElement' and 'set' methods then write data in a new file
 """
 import xml.etree.ElementTree as ET
 
@@ -19,7 +21,16 @@ for item in root.findall('item'):
     title = item.get('title')
     price = item.get('price')
     print(f"Title: {title}, Price: {price}")
-    
+
+
+new_item = ET.SubElement(root, "item")
+new_item.set('title', 'Cortisol')
+new_item.set("price", '30 eur')
+
+tree = ET.ElementTree(root)
+tree.write("output.xml")
+
+
 """
 Title: Antibodies IgG to SARS-CoV-2, Price: 25 eur
 Title: Antibodies to HIV, Price: 20 eur
