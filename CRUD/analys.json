@@ -1,18 +1,13 @@
 {
   "analysis": [
     {
-      "id": 1,
-      "title": "COVID",
-      "price": 35
-    },
-    {
       "id": 2,
       "title": "Allergy",
       "price": 25
     },
     {
       "id": 3,
-      "title": "ABC",
+      "title": "Cortisol",
       "price": 40
     },
     {
