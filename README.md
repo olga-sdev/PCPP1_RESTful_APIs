@@ -1,5 +1,6 @@
 # PCPP1_RESTful_APIs
 
+Content of project:
 
 * concepts of network programming, REST, network sockets, and client-server communication;
   
